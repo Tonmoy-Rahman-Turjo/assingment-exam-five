@@ -3,7 +3,7 @@ const seats = document.querySelectorAll(".kbd");
 
 
 const array = [];
-let totalSeat = 12;
+let totalSeat = 20;
 let count = 0;
 let totalseitPrice = 0;
 const price = 550;

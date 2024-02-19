@@ -8,7 +8,7 @@ let count = 0;
 let totalseitPrice = 0;
 const price = 550;
 let grandTotal;
-const input = document.getElementById("phone-number-input");
+const input = document.getElementById("phone-number");
 
 for (let kbd of seats) {
   kbd.addEventListener("click", function (event) {
@@ -20,7 +20,7 @@ for (let kbd of seats) {
       count = count + 1;
       totalseitPrice = price + totalseitPrice;
 
-      const numberFied = document.getElementById("phone-number-input");
+      const numberFied = document.getElementById("phone-number");
       const number = numberFied.value;
       if (array.length > 0 && number.length > 0) {
         const nextButton = document.getElementById("next");
@@ -60,30 +60,30 @@ for (let kbd of seats) {
 
 
 
-const discountContainer = document.getElementById("discount-container");
+const setDiscount = document.getElementById("discount");
 
 document.getElementById("apply-btn").addEventListener("click", function () {
   const inputField = document.getElementById("coupon-inputs");
   const inputValue = inputField.value;
 
-  discountContainer.classList.remove("hidden");
+  setDiscount.classList.remove("hidden");
   if (inputValue === "NEW15") {
     const totalTricketPrice = getElementById("total-price");
-    const discount = (totalTricketPrice * 15) / 100;
+    const discounts = (totalTricketPrice * 15) / 100;
     const grandTotal = getElementById("grand-total");
-    const discountedPrice = grandTotal - discount;
+    const discountedPrice = grandTotal - discounts;
     const couponContainer = document.getElementById("coupon");
     couponContainer.classList.add("hidden");
-    setElementInnerTextById("discount-price", discount);
+    setElementInnerTextById("discount-price", discounts);
     setElementInnerTextById("grand-total", discountedPrice);
   } else if (inputValue === "Couple 20") {
     const totalTricketPrice = getElementById("total-price");
-    const discount = (totalTricketPrice * 20) / 100;
+    const discounts = (totalTricketPrice * 20) / 100;
     const grandTotal = getElementById("grand-total");
-    const discountedPrice = grandTotal - discount;
+    const discountedPrice = grandTotal - discounts;
     const couponContainer = document.getElementById("coupon");
     couponContainer.classList.add("hidden");
-    setElementInnerTextById("discount-price", discount);
+    setElementInnerTextById("discount-price", discounts);
     setElementInnerTextById("grand-total", discountedPrice);
   } else {
     alert("Invalid Coupon Code");
